@@ -19,9 +19,9 @@ export type Database = {
           category: string | null
           co2_saved: number | null
           condition: string | null
-          created_at: string | null
+          created_at: string
           description: string | null
-          id: number
+          id: string
           image_url: string | null
           owner_id: string | null
           price: number | null
@@ -31,9 +31,9 @@ export type Database = {
           category?: string | null
           co2_saved?: number | null
           condition?: string | null
-          created_at?: string | null
+          created_at?: string
           description?: string | null
-          id?: number
+          id?: string
           image_url?: string | null
           owner_id?: string | null
           price?: number | null
@@ -43,13 +43,81 @@ export type Database = {
           category?: string | null
           co2_saved?: number | null
           condition?: string | null
-          created_at?: string | null
+          created_at?: string
           description?: string | null
-          id?: number
+          id?: string
           image_url?: string | null
           owner_id?: string | null
           price?: number | null
           title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "eco_items_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      favorites: {
+        Row: {
+          created_at: string
+          id: string
+          item_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          item_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          item_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "favorites_item_id_fkey"
+            columns: ["item_id"]
+            isOneToOne: false
+            referencedRelation: "eco_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "favorites_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          created_at: string
+          id: string
+          username: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          id?: string
+          username?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          id?: string
+          username?: string | null
         }
         Relationships: []
       }
