@@ -25,7 +25,7 @@
 - **Authentication**: Supabase Auth  
 - **Storage**: Supabase Storage for item images  
 - **AI Features**: Lovable.ai integrated for smart assistant  
-- **Deployment**: Deployed on [Lovable](https://eco-finds-recycled.lovable.app/)  
+- **Deployment**: Deployed on [Lovable]((https://green-exchange-space.lovable.app))  
 
 ---
 
@@ -35,3 +35,7 @@
 ```bash
 git clone https://github.com/Mohituser123/ecofinds-hackathon-2025.git
 cd ecofinds-hackathon-2025
+
+🌐 Live Demo
+
+Experience the live application here: Green Exchange Space on Lovable : https://green-exchange-space.lovable.app
